@@ -122,7 +122,7 @@
                                 <label class="col-md-3 control-label"><?php echo lang('admi_PhoneNumber'); ?>  <span class="requiredStar"> * </span></label>
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="phone" value="<?php echo $phone; ?>" data-validation="required" data-validation-error-msg="">
-                                    <span class="help-block">01600-000000</span>
+                                    <span class="help-block">910457896</span>
                                 </div>
                             </div>
                             <div class="form-group">

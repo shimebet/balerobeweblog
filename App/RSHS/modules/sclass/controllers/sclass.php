@@ -364,24 +364,51 @@ class Sclass extends MX_Controller {
             $this->load->view('temp/header');
             $this->load->view('viewRoutine', $data);
             $this->load->view('temp/footer');
-        }
+        } 
     }
     //This function will show student's and parent's own class routine
     public function ownClassRoutin() {
         $data = array();
         $userId = $this->input->get('uisd');
-        $query = $this->db->query("SELECT class_id FROM parents_info WHERE user_id='$userId'");
-        foreach ($query->result_array() as $row) {
+    
+        // Initialize class_id to a default value
+        $class_id = null;
+    
+        // Try fetching class_id from student_info table
+        $query = $this->db->query("SELECT class_id FROM student_info WHERE user_id = ?", array($userId));
+    
+        if ($query->num_rows() > 0) {
+            // If a result is found, set the class_id from student_info
+            $row = $query->row_array();
             $class_id = $row['class_id'];
+        } else {
+            // If no result is found, try fetching class_id from parents_info table
+            $query = $this->db->query("SELECT class_id FROM parents_info WHERE user_id = ?", array($userId));
+            if ($query->num_rows() > 0) {
+                // If a result is found, set the class_id from parents_info
+                $row = $query->row_array();
+                $class_id = $row['class_id']; 
+            }
         }
-        $data['class_id'] = $class_id;
-        $data['day'] = $this->common->getAllData('config_week_day');
-        $data['subject'] = $this->common->getWhere('class_subject', 'class_id', $class_id);
-        $data['teacher'] = $this->common->getAllData('teachers_info');
-        $this->load->view('temp/header');
-        $this->load->view('viewRoutine', $data);
-        $this->load->view('temp/footer');
+    
+        // Check if class_id was set
+        if ($class_id !== null) {
+            $data['class_id'] = $class_id;
+            $data['day'] = $this->common->getAllData('config_week_day');
+            $data['subject'] = $this->common->getWhere('class_subject', 'class_id', $class_id);
+            $data['teacher'] = $this->common->getAllData('teachers_info');
+    
+            // Load the views
+            $this->load->view('temp/header');
+            $this->load->view('viewRoutine', $data);
+            $this->load->view('temp/footer');
+        } else {
+            // Handle the case where no class_id is found
+            show_error('Class ID not found for the given user.', 404);
+        }
     }
+    
+
     //This function gives us class section and class info.
     public function ajaxpromotion() {
         $classTitle = $this->input->get('q');

@@ -127,7 +127,7 @@
                                 <div class="col-md-4">
                                     <input type="text" class="form-control" name="phone" placeholder=""  data-validation="required" data-validation-error-msg="">
                                     <span class="help-block">
-                                        1600-000000</span>
+                                    910457896</span>
                                 </div>
                             </div>
                             <div class="form-group">

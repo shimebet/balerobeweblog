@@ -57,12 +57,20 @@
                                 <label class="col-md-3 control-label"><?php echo lang('lib_mc'); ?> <span class="requiredStar"> * </span></label>
                                 <div class="col-md-6">
 
-                                    <select class="form-control" name="parent_category">
-                                        <option value=""><?php echo lang('select'); ?></option>
-                                        <?php foreach ($category as $row) { ?>
-                                            <option value="<?php echo $row['category_title']; ?>"><?php echo $row['category_title']; ?></option>
-                                        <?php } ?>
-                                    </select>
+                                <select class="form-control" name="parent_category">
+                                    <option value=""><?php echo lang('select'); ?></option>
+                                    <option value="English">English</option>
+                                    <option value="Amharic">Amharic</option>
+                                    <option value="Oromic">Oromic</option>
+                                    <option value="Arabic">Arabic</option>
+                                    <option value="Tigrigna">Tigrigna</option>
+                                    <option value="Somali">Somali</option>
+                                    <option value="Afar">Afar</option>
+                                    <option value="Sidama">Sidama</option>
+                                    <option value="Welayta">Welayta</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+
                                 </div>
                             </div>
                             <div class="form-group">

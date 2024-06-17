@@ -1,7 +1,7 @@
 <!-- Start FOOTER -->
 <div class="page-footer">
     <div class="page-footer-inner footerInLineCss">
-        2015 &copy; Quadzlab Ltd. All Rights Reserved.
+        2024 &copy; Shime T. All Rights Reserved.
     </div>
     <div class="page-footer-tools">
         <span class="go-top">

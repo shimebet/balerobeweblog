@@ -54,7 +54,7 @@
                             if (!empty($success)) {
                                 echo $success;
                             }
-                            ?>
+                            ?> 
 
                             <div class="form-group">
                                 <label class="col-md-3 control-label"><?php echo lang('tea_fn'); ?> <span class="requiredStar"> * </span></label>
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label"><?php echo lang('tea_fn'); ?> <span class="requiredStar"> * </span></label>
+                                <label class="col-md-3 control-label"><?php echo lang('tea_fan'); ?> <span class="requiredStar"> * </span></label>
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="father_name"  placeholder=""  data-validation="required" data-validation-error-msg="">
                                 </div>
@@ -115,7 +115,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label"><?php echo lang('tea_pn'); ?> <span class="requiredStar"> * </span></label>
                                 <div class="col-md-1">
-                                    <input type="text" class="form-control" name="phoneCode" placeholder="+880"  data-validation="required" data-validation-error-msg="" value="<?php
+                                    <input type="text" class="form-control" name="phoneCode" placeholder="+251"  data-validation="required" data-validation-error-msg="" value="<?php
                                     if (!empty($countryPhoneCode)) {
                                         echo $countryPhoneCode;
                                     }

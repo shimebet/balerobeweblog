@@ -121,12 +121,12 @@
                                 <label class="col-md-3 control-label"> <?php echo lang('admi_PhoneNumber'); ?> <span class="requiredStar"> * </span></label>
                                 
                                     <div class="col-md-1">
-                                        <input type="text" class="form-control" name="phoneCode" placeholder="+880"  data-validation="required" data-validation-error-msg="" value="<?php if(!empty($countryPhoneCode)){echo $countryPhoneCode;}?>">
+                                        <input type="text" class="form-control" name="phoneCode" placeholder="+251"  data-validation="required" data-validation-error-msg="" value="<?php if(!empty($countryPhoneCode)){echo $countryPhoneCode;}?>">
                                     </div>
                                     <div class="col-md-4">
                                         <input type="text" class="form-control" name="phone" placeholder=""  data-validation="required" data-validation-error-msg="">
                                         <span class="help-block">
-                                            1600-000000</span>
+                                           910457896</span>
                                     </div>
                             </div>
                             <div class="form-group">
