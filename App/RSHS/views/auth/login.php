@@ -14,9 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
-    <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Page Level Styles -->
     <link href="assets/global/plugins/select2/select2.css" rel="stylesheet" type="text/css" />
@@ -41,51 +39,51 @@
         /* Global Styles */
         html, body {
             width: 100%;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
         }
 
         body.login {
             background-size: cover;
-            background-position: center center;
+            background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-color: #fff;
         }
 
         .container-fluid {
-            padding: 0; /* Remove padding from container-fluid */
+            padding: 0;
+        }
+
+        .login-left, .login-right {
+            height: auto;
+            padding: 20px;
         }
 
         .login-left {
-            background-color: #f4f4f4;
-            padding: 30px;
-            border-right: 1px solid #ddd;
-            height: 170vh; /* Full viewport height for left section */
+            background-color: #ffffff;
+            border-right: 1px solid #fff;
         }
 
         .login-right {
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
-            height: 100vh; /* Full viewport height for right section */
-            padding: 20px; /* Add padding for better appearance */
-        }
-
-        .login-right h2 {
-            color: #333;
+            align-items: center;
         }
 
         .content {
-            background-color: #f0f0f0 !important;
             padding: 20px;
+            background-color: #f0f0f0;
             box-sizing: border-box;
         }
 
         .form-title {
             margin-bottom: 20px;
+            color: peru;
         }
 
         .alert-danger {
@@ -107,19 +105,10 @@
             text-decoration: underline;
         }
 
-        /* .welcome-section {
-            margin-top: 0px;
-            color: #333;
-        }
-
-        .welcome-section p {
-            color: #666;
-        } */
-
         .read-more {
             display: block;
-            margin-top: 0px;
-            color: #007bff; /* Bootstrap primary color */
+            margin-top: 0;
+            color: #007bff;
             text-decoration: none;
         }
 
@@ -129,7 +118,7 @@
 
         .more-content {
             display: none;
-            margin-top: 0px;
+            margin-top: 0;
             color: #666;
         }
 
@@ -137,29 +126,96 @@
             max-width: 100%;
             height: auto;
         }
-h4{
-    color: peru;
-}
+
+        h4 {
+            color: peru;
+        }
+
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            margin-right: 10px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        #navbarNav a {
+            display: block;
+            padding: 14px 16px;
+            text-decoration: none;
+            color:black;
+            font-weight: 500;
+            font-size: 17px;
+            transition: all 0.3s ease;
+        }
+        .nav-item a:hover {
+            color: #007bff;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-toggler {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
-            .login-left, .login-right {
-                height: auto; /* Adjust to auto height for smaller screens */
-                border-right: none; /* Remove border on smaller screens */
+            .navbar-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 0;
+                margin-top: 10px;
             }
 
-            .login-left {
-                border-bottom: 1px solid #ddd; /* Add border bottom on smaller screens */
+            .nav-item {
+                margin-top: 10px;
             }
         }
     </style>
 </head>
+<body>
+    <!-- Header Section -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <div class="container-fluid">
+            <a href="../index.php" class="navbar-brand">
+                <img src="../img/headerlogo.jpg" alt="Logo" style="width: 60px; height: 60px;">
+                WELCOME TO RSSMS
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="../index.php">Home</a>
+                    <a class="nav-item nav-link" href="../about.php">About</a>
+                    <a class="nav-item nav-link" href="../courses.php">Courses</a>
+                    <a class="nav-item nav-link" href="../contact.php">Contact</a>
+                    <a class="nav-item nav-link link-login" href="#" style="color: #007bff;">Login <i class="fa fa-arrow-right ms-3"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END Header Section -->
 
 <body class="login">
     <!-- BEGIN CONTAINER -->
     <div class="container-fluid">
         <div class="row no-gutters">
             <!-- Left Side (Login Form) -->
-             <div class="col-lg-6 col-md-12 login-left">
-                <div class="content">
+            <div class="col-lg-6 col-md-12 login-left"><br>
+                <div class="content" style="background-color:  #f8f9f9 ;">
                     <div id="infoMessage">
                         <b style="color: red !important;"><?php echo $message; ?></b>
                     </div>
@@ -167,9 +223,9 @@ h4{
                     $attributes = array('class' => 'login-form');
                     echo form_open("auth/login", $attributes);
                     ?>
-                    <div class="testimonial-text bg-light text-center p-4">
+                    <!-- <div class="testimonial-text bg-light text-center p-4">
                         <img src="../img/course-2.jpg" alt="Login Image" width="200" height="100">
-                    </div>
+                    </div> -->
                     <h3 class="form-title" style="color: peru;"><?php echo lang('login_heading'); ?></h3>
                     <div class="alert alert-danger display-hide" style="color: red;">
                         <button class="close" data-close="alert"></button>
@@ -190,11 +246,10 @@ h4{
                         </div>
                     </div>
                     <div class="form-actions">
-                         <!-- Back to Homepage Button -->
-                         <a id="back-to-homepage" href="../index.php" class="" style="margin-left: 10px; color:peru; font-size: large; text-decoration:none">
+                        <!-- Back to Homepage Button -->
+                        <a id="back-to-homepage" href="../index.php" class="" style="margin-left: 10px; color:peru; font-size: large; text-decoration:none">
                                Cancel
                         </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <!-- Login Button -->
                         <a id="submit" href="#" class="" style="font-size: large; text-decoration:none">
                             <?php echo lang('login_submit_btn'); ?>
@@ -219,8 +274,8 @@ h4{
                 <h4><b>Welcome to Robe Secondary School Management System</b></h4>
                 <!-- Carousel Start -->
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="../img/bg3.jpg" alt="Robe City" style="max-width: 100%; height: auto;">
-                    <h4 class="mb-0" style="color: blue;"><b>Robe City</b></h4>
+                    <img class=" rounded-circle p-2 mx-auto mb-3" src="../img/course-2.jpg" alt="Robe City" style="max-width: 100%; height: auto;">
+                    <h4 class="mb-0" style="color: #4a235a;"><b>Robe City</b></h4>
                 </div>
                 <!-- Carousel End -->
 
@@ -229,19 +284,19 @@ h4{
                     <p>By accessing or using the System, you agree to comply with and be bound by the following terms and conditions ("Terms"). Please review these Terms carefully. If you do not agree with these Terms, you should not use the System.</p>
                     <a href="#" class="read-more" id="read-more">Read More</a>
                     <div class="more-content" id="more-content">
-                    <h4>Account Security</h4>
-                    <p>You are responsible for maintaining the confidentiality of your account credentials (username and password).
-                    You agree to notify the School immediately of any unauthorized use of your account.
-                    The School is not liable for any loss or damage arising from your failure to comply with this security obligation.</p>
-                    <h4>User Information</h4>
-                    <p>You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.</p>
-                    <h4>Personal Data</h4>
-                    <p>The School collects and processes personal data in accordance with our Privacy Policy. You consent to the collection, use, and disclosure of your personal data as described in our Privacy Policy.</p>
-                    <h4>Data Security</h4>
-                    <p>The School implements security measures designed to protect your personal data from unauthorized access, use, or disclosure. Despite these measures, we cannot guarantee the absolute security of your data. You acknowledge and accept that there are risks associated with transmitting information over the internet.</p>
-                    <h4>Intellectual Property</h4>
-                    <p>All content provided on the System, including text, graphics, logos, and software, is the property of the School or its content suppliers and is protected by intellectual property laws. You may not copy, distribute, modify, or create derivative works from the content without the School's prior written consent.</p>
-                </div>  
+                        <h4>Account Security</h4>
+                        <p>You are responsible for maintaining the confidentiality of your account credentials (username and password).
+                        You agree to notify the School immediately of any unauthorized use of your account.
+                        The School is not liable for any loss or damage arising from your failure to comply with this security obligation.</p>
+                        <h4>User Information</h4>
+                        <p>You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.</p>
+                        <h4>Personal Data</h4>
+                        <p>The School collects and processes personal data in accordance with our Privacy Policy. You consent to the collection, use, and disclosure of your personal data as described in our Privacy Policy.</p>
+                        <h4>Data Security</h4>
+                        <p>The School implements security measures designed to protect your personal data from unauthorized access, use, or disclosure. Despite these measures, we cannot guarantee the absolute security of your data. You acknowledge and accept that there are risks associated with transmitting information over the internet.</p>
+                        <h4>Intellectual Property</h4>
+                        <p>All content provided on the System, including text, graphics, logos, and software, is the property of the School or its content suppliers and is protected by intellectual property laws. You may not copy, distribute, modify, or create derivative works from the content without the School's prior written consent.</p>
+                    </div>  
                 </div>
             </div>
         </div>
@@ -267,6 +322,9 @@ h4{
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 
